@@ -1,6 +1,7 @@
 #import "@preview/modern-sjtu-report:0.1.0": *
 
 #let experiment_name = "实验名称"
+// 更改校徽，logo，header等的颜色
 #let ident_color = "blue"
 #let info-items = (
   ([专#h(2em)业], [某专业]),

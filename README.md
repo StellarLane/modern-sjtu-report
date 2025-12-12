@@ -1,5 +1,7 @@
 # 上海交大实验报告模板 `modern-sjtu-report`
 
+![banner](thumbnail_github.png)
+
 上海交通大学课程实验报告的Typst模板（非官方）。
 
 ## 使用
