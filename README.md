@@ -12,13 +12,13 @@
 
 1. 安装 [Tinymist Typst](https://marketplace.visualstudio.com/items?itemName=myriad-dreamin.tinymist) 插件
 
-2. 按下 `Ctrl + Shift + P`(Windows) / `Command + Shift + P`(MacOS) 打开命令界面，输入 `Typst: Initialize a New Typst Project based on a Template` 并回车，选择 `@preview/modern-sjtu-report:0.1.0`，选择一个空文件夹作为项目目录，随后就可以开始编辑了。
+2. 按下 `Ctrl + Shift + P`(Windows) / `Command + Shift + P`(MacOS) 打开命令界面，输入 `Typst: Initialize a New Typst Project based on a Template` 并回车，选择 `@preview/modern-sjtu-report:0.1.1`，选择一个空文件夹作为项目目录，随后就可以开始编辑了。
 
 ### 使用命令行
 
 1. 下载并安装 [Typst Complier](https://typst.app/open-source/#download)。
 
-2. 使用命令 `typst init @preview/modern-sjtu-report:0.1.0` 初始化项目
+2. 使用命令 `typst init @preview/modern-sjtu-report:0.1.1` 初始化项目
 
 ### 使用web app
 

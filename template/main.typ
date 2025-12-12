@@ -1,4 +1,4 @@
-#import "@preview/modern-sjtu-report:0.1.0": *
+#import "@preview/modern-sjtu-report:0.1.1": *
 
 #let experiment_name = "实验名称"
 // 更改校徽，logo，header等的颜色
