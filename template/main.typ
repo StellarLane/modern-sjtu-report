@@ -1,4 +1,4 @@
-#import "@local/sjtu-lab-report:0.1.0": *
+#import "@preview/modern-sjtu-report:0.1.0": *
 
 #let experiment_name = "实验名称"
 #let ident_color = "blue"
@@ -9,10 +9,11 @@
   ([教#h(2em)师], [某教师]),
   ([自定义键], [自定义值]),
 )
-// Fonts
-#let cover_fonts = ("Times New Roman", "KaiTi", "LXGW Bright Code", "Noto Serif SC")
+
+// 如果出现了字体不显示等问题可以尝试修改此处的字体
+#let cover_fonts = ("Times New Roman", "KaiTi", "Noto Serif SC")
 #let article_fonts = ("Times New Roman", "Noto Serif SC")
-#let code_fonts = ("Consolas", "Ubuntu Mono", "Menlo", "Courier New", "Noto Sans SC")
+#let code_fonts = ("Consolas", "Ubuntu Mono", "Menlo", "Courier New", "Noto Serif SC")
 
 #make_cover(
   course_name: "某交大金课",
@@ -48,7 +49,7 @@
 
 == 基础语法
 
-落霞与孤鹜齐飞，*秋水共长天一色*。
+落霞与孤#h(2em)鹜齐飞，*秋水共长天一色*。
 
 #underline[The quick brown] #strike[fox] jumps over _the lazy_ d#super[o]#sub[g].
 
@@ -74,10 +75,10 @@
 #lorem(30)
 
 $
-  x_"1, 2" = (- b plus.minus sqrt(b^2 - 4 a c)) / (2 a)
+  x_"1,2" = (- b plus.minus sqrt(b^2 - 4 a c)) / (2 a)
 $
 
-而这是一个行内数学公式 $e^{i pi} + 1 = 0.$
+而这是一个行内数学公式 $e^(i pi) + 1 = 0.$
 
 == 图表
 
@@ -97,7 +98,7 @@ $
 #lorem(50)
 
 #figure(
-  image("../src/assets/SJTU_header_red.png", width: 10cm),
+  image("./assets/SJTU_header_red.png", width: 10cm),
   caption: "上海交通大学-标志中英文-横板",
 )
 
@@ -105,14 +106,14 @@ $
 
 == 代码
 
-#lorem(15)
+#lorem(30) 这是一个行内代码块 ```python print("Hello, World!")``` (有高亮) `print("Hello World!")` （无高亮）。
 
 ```cpp
 #include <iostream>
 using namespace std;
 int main() {
     cout << "Hello, World!" << endl;
-    return 0;
+    return 0; // 代码中的中文
 }
 ```
 
@@ -134,7 +135,7 @@ int main() {
       + *end*
     + *end*
   ],
-  caption: "伪代码实例",
+  caption: "伪代码示例",
 )
 
 #lorem(20) @vaswani2023attentionneed @reference

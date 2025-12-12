@@ -1,43 +1,36 @@
-# The `sjtu-lab-report` Package
+# 上海交大实验报告模板 `modern-sjtu-report`
 
-<div align="center">Version 0.0.1</div>
+上海交通大学课程实验报告的Typst模板（非官方）。
 
-A short description about the project and/or client.
+## 使用
 
-## Getting Started
+<!-- TODO 检查这里的版本号 -->
 
-These instructions will get you a copy of the project up and running on the typst web app. Perhaps a short code example on importing the package and a very simple teaser usage.
+### 使用vscode编辑
 
-```typ
-#import "@preview/my-package:0.1.0": *
+1. 安装 [Tinymist Typst](https://marketplace.visualstudio.com/items?itemName=myriad-dreamin.tinymist) 插件
 
-#show: my-show-rule.with()
-#my-func()
-```
+2. 按下 `Ctrl + Shift + P`(Windows) / `Command + Shift + P`(MacOS) 打开命令界面，输入 `Typst: Initialize a New Typst Project based on a Template` 并回车，选择 `@preview/modern-sjtu-report:0.1.0`，选择一个空文件夹作为项目目录，随后就可以开始编辑了。
 
-### Installation
+### 使用命令行
 
-A step by step guide that will tell you how to get the development environment up and running. This should explain how to clone the repo and where to (maybe a link to the typst documentation on it), along with any pre-requisite software and installation steps.
+1. 下载并安装 [Typst Complier](https://typst.app/open-source/#download)。
 
-```
-$ First step
-$ Another step
-$ Final step
-```
+2. 使用命令 `typst init @preview/modern-sjtu-report:0.1.0` 初始化项目
 
-## Usage
+### 使用web app
 
-A more in-depth description of usage. Any template arguments? A complicated example that showcases most if not all of the functions the package provides? This is also an excellent place to signpost the manual.
+1. 在 [Typst Web App](https://typst.app/) 中新建项目，选择 `Start From Template`，然后选择 `modern-sjtu-report` 模板即可。
 
-```typ
-#import "@preview/my-package:0.1.0": *
+## 参考与致谢
 
-#let my-complicated-example = ...
-```
+- 参考了`BME2305-模拟电子实验`课程中老师提供了word版本实验报告模板。
+- 参考了 [SJTU-Thesis](https://github.com/sjtug/SJTUThesis?tab=readme-ov-file) 项目中的部分样式。
+- 参考了 [modern-sjtu-thesis](https://github.com/tzhtaylor/modern-sjtu-thesis) 项目中的部分样式。
+- 感谢 [@EveOfAugust](https://github.com/EveOfAugust) 提供的实验报告作为参考。
 
-## Additional Documentation and Acknowledgments
+## 许可
 
-- Project folder on server:
-- Confluence link:
-- Asana board:
-- etc...
+项目采用Unlicense License，属于公有领域。项目中使用的第三方包[lovelace](https://github.com/andreasKroepelin/lovelace)采用MIT License。
+
+项目中使用的上海交通大学校徽等素材版权归上海交通大学所有，与之相关的使用与修改需严格遵守[上海交通大学视觉形象识别系统](https://vi.sjtu.edu.cn/)中的相关规定。
