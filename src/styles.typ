@@ -1,6 +1,3 @@
-// INFO FONTS FOR MAIN CONTENTS
-
-
 #let make_title(name: str) = align(center)[
   #text(size: 20pt, weight: "bold")[#name]
   #v(1em)
@@ -70,17 +67,64 @@
 
   set heading(numbering: "1.1")
 
+  set par(first-line-indent: (amount: 2em, all: true))
+
+  set table(stroke: (x, y) => (
+    top: if y == 0 { 1pt } else if y == 1 { 0.5pt } else { 0pt },
+    bottom: 1pt,
+  ))
+
+  show figure.where(kind: table): it => {
+    align(center)[
+      #if it.caption != none [
+        #text(size: 9pt, weight: "bold")[
+          表 #counter(figure.where(kind: table)).display(): #it.caption.body
+        ]
+      ]
+      #v(-0.5em)
+      #it.body
+    ]
+  }
+  show figure.where(kind: image): it => {
+    align(center)[
+      #v(-0.5em)
+      #it.body
+      #if it.caption != none [
+        #text(size: 9pt, weight: "bold")[
+          图 #counter(figure.where(kind: image)).display(): #it.caption.body
+        ]
+      ]
+    ]
+  }
+  show figure.where(kind: "pseudocode-list"): it => {
+    align(left)[
+      #line(length: 100%, stroke: 0.5pt + black)
+      #v(-0.75em)
+      #if it.caption != none [
+        #text(size: 9pt, weight: "bold")[
+          算法 #counter(figure.where(kind: "pseudocode-list")).display(): #it.caption.body
+        ]
+      ]
+      #v(-0.75em)
+      #line(length: 100%, stroke: 0.25pt + black)
+      #v(-1.5em)
+      #it.body
+      #v(-1.5em)
+      #line(length: 100%, stroke: 0.5pt + black)
+    ]
+  }
+
   show raw: it => {
     text(font: code_fonts)[#it]
   }
   show raw.where(block: true): it => {
     align(right)[#text(size: 8pt)[#it.lang]]
     v(-0.75em)
-    line(length: 100%, stroke: 0.25pt + black)
+    line(length: 100%, stroke: 0.5pt + black)
     block(
       it,
     )
-    line(length: 100%, stroke: 0.25pt + black)
+    line(length: 100%, stroke: 0.5pt + black)
   }
 
   content

@@ -2,7 +2,13 @@
 
 #let experiment_name = "实验名称"
 #let ident_color = "blue"
-
+#let info-items = (
+  ([专#h(2em)业], [某专业]),
+  ([学生姓名], [某学生]),
+  ([学生学号], [1234567890]),
+  ([教#h(2em)师], [某教师]),
+  ([自定义键], [自定义值]),
+)
 // Fonts
 #let cover_fonts = ("Times New Roman", "KaiTi", "LXGW Bright Code", "Noto Serif SC")
 #let article_fonts = ("Times New Roman", "Noto Serif SC")
@@ -11,37 +17,127 @@
 #make_cover(
   course_name: "某交大金课",
   course_name_en: "Some random course",
-  name: "某某某",
-  number: "123456789012",
-  major: "某专业",
-  tutor: "某老师",
+  info-items: info-items,
   ident_color: ident_color,
-  cover_fonts: cover_fonts
+  cover_fonts: cover_fonts,
 )
 
 #show: general_layout.with(
-  ident_color: ident_color, 
+  ident_color: ident_color,
   header_logo: true,
   experiment_name: experiment_name,
   article_fonts: article_fonts,
-  code_fonts: code_fonts
+  code_fonts: code_fonts,
 )
 
 #make_title(name: experiment_name)
 
-= 一级标题
-== 二级标题
+= 中文示例
+
+相聚在东海之滨，吸取知识的甘泉。交大，交大，学府庄严，师生切磋共涉艰险。为飞跃而求实，为创业而攻坚。同学们，同学们！振兴中华，振兴中华。宏图在胸，重任在肩。
+
+迎向那真理之光，扬起青春的风帆。交大，交大，群英汇聚，同舟共济远航彼岸。为自强而奋发，为人类多贡献。同学们，同学们！饮水思源，饮水思源。母校的光荣，长存心田。
+
+= English Example
+
+#lorem(25)
+
+#lorem(40)
+
+= Typst 常见语法与样式实例
+
+== 基础语法
+
+落霞与孤鹜齐飞，*秋水共长天一色*。
+
+#underline[The quick brown] #strike[fox] jumps over _the lazy_ d#super[o]#sub[g].
+
 === 三级标题
 ==== 四级标题
 ===== 五级标题
 ====== 六级标题
 
-#lorem(110)
+== 列表
 
-```python
-print("hello, world")
+#lorem(20)
+
++ 有序
++ 列表
+
+#lorem(30)
+
+- 无序
+- 列表
+
+== 数学
+
+#lorem(30)
+
+$
+  x_"1, 2" = (- b plus.minus sqrt(b^2 - 4 a c)) / (2 a)
+$
+
+而这是一个行内数学公式 $e^{i pi} + 1 = 0.$
+
+== 图表
+
+#lorem(40)
+
+#figure(
+  table(
+    columns: (auto, auto, auto),
+    table.header([Column1], [Column2], [Columns3]),
+    [第一行], [100], [$x + y$],
+    [row2], [200], [$1/2$],
+    [_The third row_], [30000000000000], [$integral e^x d x$],
+  ),
+  caption: "一个三线表",
+)
+
+#lorem(50)
+
+#figure(
+  image("../src/assets/SJTU_header_red.png", width: 10cm),
+  caption: "上海交通大学-标志中英文-横板",
+)
+
+#lorem(25)
+
+== 代码
+
+#lorem(15)
+
+```cpp
+#include <iostream>
+using namespace std;
+int main() {
+    cout << "Hello, World!" << endl;
+    return 0;
+}
 ```
 
-#lorem(50)`hello, world!`
+#lorem(20)
 
-#pagebreak()
+#figure(
+  kind: "pseudocode-list",
+  supplement: pseudocode-list,
+  pseudocode-list[
+    + do something
+    + do something else
+    + *while* still something to do
+      + do even more
+      + *if* not done yet *then*
+        + wait a bit
+        + resume working
+      + *else*
+        + go home
+      + *end*
+    + *end*
+  ],
+  caption: "伪代码实例",
+)
+
+#lorem(20) @vaswani2023attentionneed @reference
+
+
+#bibliography("ref.bib", title: "参考文献")
