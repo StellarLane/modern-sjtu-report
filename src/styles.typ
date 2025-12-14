@@ -1,4 +1,4 @@
-#let make_title(name: str) = align(center)[
+#let make-title(name: str) = align(center)[
   #text(size: 20pt, weight: "bold")[#name]
   #v(1em)
 ]
@@ -37,12 +37,12 @@
   )
 }
 
-#let general_layout(
-  ident_color: str,
-  header_logo: bool,
-  experiment_name: str,
-  article_fonts: array,
-  code_fonts: array,
+#let general-layout(
+  ident-color: str,
+  header-logo: bool,
+  experiment-name: str,
+  article-fonts: array,
+  code-fonts: array,
   content,
 ) = {
   counter(page).update(1)
@@ -51,9 +51,9 @@
     margin: (top: 2.54cm, bottom: 2.54cm, left: 3.18cm, right: 3.18cm),
     header: context {
       if calc.odd(counter(page).get().first()) {
-        header_left(ident_color: ident_color, header_logo: header_logo, experiment_name: experiment_name)
+        header_left(ident_color: ident-color, header_logo: header-logo, experiment_name: experiment-name)
       } else {
-        header_right(ident_color: ident_color, header_logo: header_logo)
+        header_right(ident_color: ident-color, header_logo: header-logo)
       }
       v(-0.25cm)
       line(length: 100%, stroke: 0.5pt + black)
@@ -63,7 +63,7 @@
     ],
   )
 
-  set text(font: article_fonts)
+  set text(font: article-fonts)
 
   set heading(numbering: "1.1")
 
@@ -115,7 +115,7 @@
   }
 
   show raw: it => {
-    text(font: code_fonts)[#it]
+    text(font: code-fonts)[#it]
   }
   show raw.where(block: true): it => {
     align(right)[#text(size: 8pt)[#it.lang]]

@@ -1,20 +1,20 @@
-#let make_cover(
-  course_name: str,
-  course_name_en: str,
+#let make-cover(
+  course-name: str,
+  course-name-en: str,
   info-items: array,
-  ident_color: str,
-  cover_fonts: list,
+  ident-color: str,
+  cover-fonts: list,
 ) = {
   page(margin: (top: 2cm, bottom: 2cm, left: 2.5cm, right: 2.5cm), header: none, footer: none)[
 
     #set align(center)
-    #set text(font: cover_fonts)
+    #set text(font: cover-fonts)
 
     #v(1cm)
 
-    #if ident_color == "blue" {
+    #if ident-color == "blue" {
       image("./assets/SJTU_blue.png", width: 8.31cm)
-    } else if ident_color == "red" {
+    } else if ident-color == "red" {
       image("./assets/SJTU_red.png", width: 8.31cm)
     }
 
@@ -24,11 +24,11 @@
 
     #v(0.5cm)
 
-    #text(size: 18pt, weight: "bold")[#course_name]
+    #text(size: 18pt, weight: "bold")[#course-name]
 
     #v(0.2cm)
 
-    #text(size: 12pt, weight: "bold")[#upper(course_name_en)]
+    #text(size: 12pt, weight: "bold")[#upper(course-name-en)]
 
     #v(1cm)
 
@@ -40,9 +40,9 @@
 
     #v(1cm)
 
-    #if ident_color == "blue" {
+    #if ident-color == "blue" {
       image("./assets/SJTU_logo_blue.png", width: 3.2cm)
-    } else if ident_color == "red" {
+    } else if ident-color == "red" {
       image("./assets/SJTU_logo_red.png", width: 3.2cm)
     }
 
